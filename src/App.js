@@ -1,26 +1,62 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
-function App() {
+const Write = (props) => {
+  const {addData} = props;
+  const [content, setContent] = useState('');
+
+  const handleWriting = (e) => {
+    setContent(e.target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addData(content);
+    setContent('');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <form onSubmit={handleSubmit}>
+      <textarea onChange={handleWriting} value={content} />
+      <button>전송하기</button>
+    </form>
+  )
+}
+
+const List = (props) => {
+  const { data } = props;
+
+  return (
+    <div className="list">
+      {data.map(item => (
+        <div key={item.id}>{item.value}</div>
+      ))}
     </div>
-  );
+  )
+}
+
+const App = () => {
+  const [data, setData] = useState([]);
+
+  const addData = (content) => {
+    const id = data.length + 1;
+
+    setData([
+      ...data,
+      {
+        id: id,
+        value: content
+      }
+    ])
+  }
+
+  return (
+    <div className="notes">
+      <Write addData={addData} />
+      <List data={data} />
+    </div>
+  )
 }
 
 export default App;
