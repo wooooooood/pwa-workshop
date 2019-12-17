@@ -45,7 +45,7 @@
 
 ## 실습 ##
 
-* [Step 01](step-01.md)
-* [Step 02](step-02.md)
-* [Step 03](step-03.md)
-* [Step 04](step-04.md)
+* 🔲[Step 01](step-01.md)
+* 🔲[Step 02](step-02.md)
+* 🔲[Step 03](step-03.md)
+* 🔲[Step 04](step-04.md)

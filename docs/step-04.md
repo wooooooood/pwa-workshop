@@ -178,3 +178,11 @@ git checkout -b dev
 이제 `dev` 브랜치에서 `master` 브랜치로 풀 리퀘스트를 만들어 봅니다. 그리고, 파이프라인 실행 결과를 확인합니다. `pr.yaml` 워크플로우만 실행이 되었습니다.
 
 ![](../images/step-04-06.png)
+
+
+## 실습 ##
+
+* ✅[Step 01](step-01.md)
+* ✅[Step 02](step-02.md)
+* ✅[Step 03](step-03.md)
+* ✅Step 04

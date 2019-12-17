@@ -4,6 +4,8 @@
 
 ### 애저 리소스 프로비저닝 ###
 
+> [마이크로소프트 에지](https://www.microsoftedgeinsider.com/ko-kr/download/?WT.mc_id=pwaazureworkshop-event-juyoo) 브라우저를 설치해서 사용해 보세요! 현재 윈도우와 맥 버전을 제공합니다.
+
 애저 포탈에서 직접 한꺼번에 리소스를 프로비저닝하기 위해서는 아래 버튼을 클릭합니다.
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fdevkimchi%2Fpwa-workshop%2Fmaster%2Fresources%2Fazuredeploy.json" target="_blank"><img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png" /></a>
@@ -40,6 +42,8 @@ git clone https://github.com/<username>/pwa-workshop.git
 
 ### 애저 CLI 로그인 ###
 
+> [애저 CLI](https://docs.microsoft.com/ko-kr/cli/azure/install-azure-cli?view=azure-cli-latest&WT.mc_id=pwaazureworkshop-event-juyoo)를 아직 설치하지 않았다면, 지금 설치하세요!
+
 ```bash
 az login
 ```
@@ -56,6 +60,8 @@ az group create \
 
 
 ### ARM 템플릿 실행 ###
+
+> [비주얼 스튜디오 코드](https://code.visualstudio.com/docs/setup/setup-overview?WT.mc_id=pwaazureworkshop-event-juyoo)를 아직 설치하지 않았다면, 지금 설치하세요!
 
 먼저 아래와 같이 `azuredeploy.parameters.json` 파일을 수정합니다.
 
@@ -78,7 +84,7 @@ az group create \
 
 ```bash
 az group deployment create \
-  -n storage-account \
+  -n all-in-one \
   -g <RESOURCE_GROUP_NAME> \
   --template-file resources/azuredeploy.json \
   --parameters @resources/azuredeploy.parameters.json \
@@ -92,3 +98,11 @@ az group deployment create \
 >   -l koreacentral \
 >   --verbose
 > ```
+
+
+## 실습 ##
+
+* ✅Step 01
+* 🔲[Step 02](step-02.md)
+* 🔲[Step 03](step-03.md)
+* 🔲[Step 04](step-04.md)
