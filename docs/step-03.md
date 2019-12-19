@@ -65,11 +65,11 @@ git push origin master
 
 ```bash
 az ad sp create-for-rbac \
-  --n <SERVICE_PRINCIPAL_NAME> \
+  -n <SERVICE_PRINCIPAL_NAME> \
   --sdk-auth
 ```
 
-이 명령어 실행 결과로 만들어지는 JSON 객체 값을 시크릿 변수 `AZURE_CREDENTIALS`에 할당합니다.
+이 명령어 실행 결과로 만들어지는 JSON 객체 값을 시크릿 변수 `AZURE_CREDENTIALS`에 할당합니다. 이 때 JSON 객체에 들어있는 `clientId` 값을 잘 기억해 둡니다.
 
 ![](../images/step-03-01.png)
 
@@ -86,10 +86,10 @@ az ad sp create-for-rbac \
       run: |
         npm run build
 
-    # - name: Test app
-    #   shell: bash
-    #   run: |
-    #     npm run test
+    - name: Test app
+      shell: bash
+      run: |
+        npm run test
 ```
 
 여기까지 수정한 후 푸시합니다. 그리고 결과를 확인합니다. 다음에 아래 액션을 추가합니다. 다시 실패하는 것을 확인합니다.
