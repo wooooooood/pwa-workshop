@@ -71,7 +71,7 @@ git push origin master
       uses: actions/download-artifact@v1
       with:
         name: app
-        path: src/WebApp/dist
+        path: build
 
     - name: Login to Azure
       uses: Azure/login@v1
